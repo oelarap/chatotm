@@ -7,13 +7,13 @@ class Visita extends CI_Controller {
         $this->load->library('session');
 		$this->load->database();
 		$this->load->helper('url');
+        $this->load->helper('email');
     }
 	/**
 	 * Formulario de contacto o de correo electronico
 	 */
 	public function index()
 	{
-		$this->load->helper('email');
 		
 		if($this->session->has_userdata("visitaId")){
 			$this->chat();
@@ -80,7 +80,7 @@ class Visita extends CI_Controller {
 			$this->index();
 			return;
 		}
-		$this->load->view("operador/chat");
+		$this->load->view("visita/chat");
 	}
 	
 	public function send_message(){
@@ -129,6 +129,5 @@ class Visita extends CI_Controller {
 			echo json_encode($mensaje,TRUE);
 			return;
 		}
-		
 	}
 }

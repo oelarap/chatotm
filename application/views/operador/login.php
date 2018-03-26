@@ -11,12 +11,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 	<div class="container">
 
-      <form class="form-signin">
+      <form class="form-signin" method="post">
         <h2 class="form-signin-heading">Porfavor ingrese con su correo y contraseña</h2>
         <label for="inputEmail" class="sr-only">Dirección de correo electrónico</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Correo electrónico" required="" autofocus="">
+        <input name="correo" type="email" id="inputEmail" class="form-control" placeholder="Correo electrónico" required="" autofocus="" value="<?php echo $usuario; ?>" />
         <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+        <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+          <?php echo $error; ?>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
       </form>
 
